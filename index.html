@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<title>Tropical Rainforest Trust</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Poppins", sans-serif
+    }
+
+    body {
+        font-size: 16px;
+    }
+</style>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="sidebar" id="mySidebar">
+        <br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="btn-close-menu">X</a>
+        <div class="container">
+            <h3 class="site-title">
+                <b>Tropical
+                    <br>Rainforest
+                    <br>Trust</b>
+            </h3>
+        </div>
+        <div class="menu">
+            <a href="index.html" class=" menu-item active-item">Home</a>
+            <a href="history.html" class=" menu-item ">History</a>
+            <div class="dropdown">
+                <a href="education.html" class="menu-item">Education ></a>
+                <div class="dropdown-content">
+                    <a href="about.html" class=" menu-subitem ">About Rainforests</a>
+                    <a href="visitor.html" class=" menu-subitem ">Visitor Information</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="community.html" class="menu-item">Community ></a>
+                <div class="dropdown-content">
+                    <a href="join.html" class=" menu-subitem">Get Involved</a>
+                </div>
+            </div>
+            <a href="adopt.html" class=" menu-item">Adopt an animal</a>
+
+            <div>
+                <h3>Subsribe to our Newsletter!</h3>
+                <form action="/action_page.php" target="_blank">
+                    <div class="section">
+                        <label>Name</label>
+                        <input class="w3-input w3-border" type="text" name="Name" required>
+                    </div>
+                    <div class="section">
+                        <label>Email</label>
+                        <input class="w3-input w3-border" type="text" name="Email" required>
+                    </div>
+                    <button type="submit" class="">Subsribe</button>
+                </form>
+            </div>
+
+
+        </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Top menu on small screens -->
+    <header class="mobile-header">
+        <a href="javascript:void(0)" onclick="w3_open()">☰</a>
+        <span>Tropical Rainforest Trust</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="main">
+
+        <!-- Header -->
+        <div class="main-container" id="showcase">
+            <div class="intro-row">
+                <div class="slider-container">
+                    <picture>
+                        <img src="images/img-frog.jpg" alt="frog" class="main-img slides" />
+                        <img src="images/img-bird.jpg" alt="bird" class="main-img slides" />
+                        <img src="images/img-bridge.jpg" alt="bridge" class="main-img slides" />
+                    </picture>
+
+                    <p>
+                        <iframe class="iframe" src="https://www.youtube.com/embed/Iz06QeuSoSM" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+
+                    </p>
+                </div>
+                <div class="txt-container">
+                    <h1>
+                        <b>Welcome to the Tropical Rainforest Trust.</b>
+                    </h1>
+
+                    <p>
+                        We are a local campaign group, working to help protect the rainforest in Central and South America and in particular the
+                        Amazon Rainforest.
+                    </p>
+
+                    <hr>
+                    <p>
+                        We offer irresistable trips to discover the lovely plants and animals that live in the Amazon Rainforest and raise funds
+                        to support the ecological sustainability of your new friends.
+                    </p>
+
+                    <h4>
+                        We encourage all our vistors to Subsribe to our monthly newsletter and adopt an animal from the rainforest!
+                    </h4>
+
+                    <p>Follow us on Facebook and Instagram!</p>
+                    <a href="#">
+                        <img src="images/facebook.png" alt="facebook" class="social-img" />
+                    </a>
+                    <a href="#">
+                        <img src="images/instagram.png" alt="instagram" class="social-img" />
+                    </a>
+                </div>
+            </div>
+
+
+
+            <!-- End page content -->
+        </div>
+
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+
+            // Modal Image Gallery
+            function onClick(element) {
+                document.getElementById("img01").src = element.src;
+                document.getElementById("modal01").style.display = "block";
+                var captionText = document.getElementById("caption");
+                captionText.innerHTML = element.alt;
+            }
+            var slideIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("slides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > x.length) { slideIndex = 1 }
+                x[slideIndex - 1].style.display = "block";
+                setTimeout(carousel, 3000);
+            }
+        </script>
+
+</body>
+
+</html>
